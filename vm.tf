@@ -21,6 +21,11 @@ resource "google_compute_instance" "bastion" {
   network_interface {
     network    = module.network.network_name
     subnetwork = module.network.Management_subnet_name
+
+    access_config {
+      // Ephemeral public IP
+    }
+
   }
 
   labels = {
